@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<?php
 
-</body>
-</html>
+require 'Pokemon.php';
+require 'Pikachu.php';
+require 'Charmeleon.php';
+

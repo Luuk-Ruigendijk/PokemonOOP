@@ -2,7 +2,7 @@
 /**
  * this is where charmeleon gets created
  */
-class ClassName extends AnotherClass
+class Charmeleon extends Pokemon
 {
 	
 	public function __construct()

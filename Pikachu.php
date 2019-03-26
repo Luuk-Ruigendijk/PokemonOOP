@@ -2,7 +2,7 @@
 /**
  * this is where pikachu gets created
  */
-class ClassName extends AnotherClass
+class Pikachu extends Pokemon
 {
 	
 	public function __construct()

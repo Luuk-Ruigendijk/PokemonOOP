@@ -1,6 +1,6 @@
 <?php
 
-class ClassName
+class Pokemon
 {
 	public $name;
 	public $type;
@@ -14,7 +14,7 @@ class ClassName
 		$this->hp = $hp;
 	}
 
-	public function Attack($regular, $health)
+	public function GetAttacked($regular, $health)
 	{
 		$notification = null;
 		if (isset($this->weakness[$regular])) {
@@ -38,5 +38,10 @@ class ClassName
 		}else{
 			return $this->nickname. ' has ' .$this->hp;
 		}
+	}
+
+	public function Attack($regular, $health)
+	{
+		
 	}
 }

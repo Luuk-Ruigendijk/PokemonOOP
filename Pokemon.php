@@ -39,9 +39,11 @@ class Pokemon
 			return $this->nickname. ' has ' .$this->hp;
 		}
 	}
-
-	public function Attack($regular, $health)
+//victim is who gets attacked.
+	function Attack($attackName, $victim)
 	{
-		
+		$attackDamage = $this->move[$attackName];
+		$type = $this->type;
+		return $victim->attacked($type, $attackDamage);
 	}
 }

@@ -51,4 +51,15 @@ class Pokemon
 		$type = $this->type;
 		return $victim->attacked($type, $attackDamage);
 	}
+
+	function GrantNickname($name, $nickname)
+	{
+		$pokemon[$name]->GrantNickname();
+	}
+
+	function Nickname($nickname)
+	{
+		$this->Nickname = $nickname;
+	}
 }
+

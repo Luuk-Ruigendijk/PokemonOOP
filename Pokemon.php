@@ -3,17 +3,41 @@
 class Pokemon
 {
 	public $name;
-	public $type;
-	public $hp;
+	public $nickname;
+	public $EnergyType;
+	public $hitpoints;
+	public $health;
 	
-	public function __construct($name, $type, $hp)
+	public function __construct($name, $type, $maxHP)
 	{
 		$this->name = $name;
 		$this->nickname = $name;
-		$this->type = $type;
-		$this->hp = $hp;
+		$this->EnergyType = $type;
+		$this->hitpoints = $maxHP;
+		$this->health = $maxHP;
 	}
 
+	public function attack($attackName, $target)
+	{
+		$damage = $this->move[$attackName];
+		$EnergyType = $this->EnergyType;
+		return $target->attacked($EnergyType, $damage);
+	}
+
+	public function attacked($EnergyType, $attackDamage)
+	{
+		//return $type . "<br>" . $attackDamage . $target;
+		if ($this->weakness->EnergyType==$EnergyType) {
+			$attackDamage = $attackDamage * $this->weakness->multiplier;
+		}
+		elseif ($this->resistance->EnergyType==$EnergyType) {
+			$attackDamage = $attackDamage - $this->resistance->defense;
+		}
+
+		$this->health = $this->health - $attackDamage;
+	}
+	
+	/*
 	public function GetAttacked($regular, $health)
 	{
 		//set notification to null
@@ -45,7 +69,7 @@ class Pokemon
 		}
 	}
 //victim is who gets attacked.
-	function Attack($attackName, $victim)
+	public function Attack($attackName, $victim)
 	{
 		$attackDamage = $this->move[$attackName];
 		$type = $this->type;
@@ -61,5 +85,19 @@ class Pokemon
 	{
 		$this->Nickname = $nickname;
 	}
-}
+	*/
 
+} 
+class EnergyType
+	{
+		/*function __construct()
+		{
+			
+		}*/
+		const FIRE = 0;
+		const FIGHT = 0;
+		const WATER = 0;
+		const LIGHTNING = 0;
+	} 
+
+	

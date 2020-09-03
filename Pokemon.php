@@ -17,24 +17,66 @@ class Pokemon
 		$this->health = $maxHP;
 	}
 
-	public function attack($attackName, $target)
+	public function attack($attack, $target)
 	{
-		$damage = $this->move[$attackName];
+		$damage = $attack->damage;
 		$EnergyType = $this->EnergyType;
 		return $target->attacked($EnergyType, $damage);
 	}
 
-	public function attacked($EnergyType, $attackDamage)
+	public function attacked($EnergyType, $damage)
 	{
-		//return $type . "<br>" . $attackDamage . $target;
+		//return $type . "<br>" . $damage . $target;
 		if ($this->weakness->EnergyType==$EnergyType) {
-			$attackDamage = $attackDamage * $this->weakness->multiplier;
+			$damage = $damage * $this->weakness->multiplier;
 		}
 		elseif ($this->resistance->EnergyType==$EnergyType) {
-			$attackDamage = $attackDamage - $this->resistance->defense;
+			$damage = $damage - $this->resistance->defense;
 		}
 
-		$this->health = $this->health - $attackDamage;
+		$this->health = $this->health - $damage;
+	}
+
+	//if the object gets echo'd, it will return what's in the toString
+
+	public function __toString(){
+		return $this->name;
+	}
+
+	public function __get($propertyName){
+		if ($propertyName == 'name'){
+			return $this->name;
+		}
+		if ($propertyName == 'nickname') {
+			return $this->nickname;
+		}
+		if ($propertyName == 'EnergyType') {
+			return $this->EnergyType;
+		}
+		if ($propertyName == 'hitpoints') {
+			return $this->hitpoints;
+		}
+		if ($propertyName == 'health') {
+			return $this->health;
+		}
+		if ($propertyName == 'attack'){
+			return $this->attack;
+		}
+		if ($propertyName == 'weakness'){
+			return $this->weakness;
+		}
+		if ($propertyName == 'resistance'){
+			return $this->resistance;
+		}
+	}
+
+	public function __set($propertyName, $newValue){
+		if ($propertyName == 'nickname') {
+			$this->nickname = $newValue;
+		}
+		if ($propertyName == 'health') {
+			$this->health = $newValue;
+		}
 	}
 	
 	/*
@@ -87,17 +129,4 @@ class Pokemon
 	}
 	*/
 
-} 
-class EnergyType
-	{
-		/*function __construct()
-		{
-			
-		}*/
-		const FIRE = 0;
-		const FIGHT = 0;
-		const WATER = 0;
-		const LIGHTNING = 0;
-	} 
-
-	
+}

@@ -2,6 +2,8 @@
 
 class Resistance
 {
+	public $EnergyType;
+	public $defense;
 	
 	function __construct($EnergyType, $defense)
 	{

@@ -1,7 +1,9 @@
 <?php
 	require 'Pokemon.php';
 	require 'Weakness.php';
-	require 'resistance.php';
+	require 'Resistance.php';
+	require 'Attack.php';
+	require 'EnergyType.php';
 	require 'Pikachu.php';
 	require 'Charmeleon.php';
 ?>
@@ -11,28 +13,22 @@
 		<title>pokebattle</title>
 	</head>
 	<body>
-		<h2>Pikachu</h2>
-		<button onclick="attack('Electric Ring', 'Charmeleon')">Use Electric Ring</button>
-		<button>Use Pika Punch</button>
-		<h2>Charmeleon</h2>
 		<?php $pikachu = new Pikachu(); ?>
 		<?php $charmeleon = new Charmeleon(); ?>
-
-		<?php echo $charmeleon->health; ?>
-
+		<p><?php echo $charmeleon->nickname; ?> has <?php echo $charmeleon->health; ?> HP</p>
 		<br>
-
-		<?php $pikachu->attack('Electric Ring', $charmeleon); ?>
+		<p><?php echo $pikachu->nickname; ?> used <?php echo $pikachu->attack[0]->attack ?></p>
+		<?php $pikachu->attack($pikachu->attack[0], $charmeleon); ?>
 		<br>
-		<?php echo $charmeleon->health; ?>
+		<p><?php echo $charmeleon->nickname; ?> has <?php echo $charmeleon->health; ?> HP</p>
 		<br>
-		<?php echo $pikachu->health; ?>
+		<p><?php echo $pikachu->nickname; ?> has <?php echo $pikachu->health; ?> HP</p>
 		<br>
-		<?php $charmeleon->attack('Flare', $pikachu); ?>
+		<p><?php echo $charmeleon->nickname; ?> used <?php echo $charmeleon->attack[1]->attack ?></p>
+		<?php $charmeleon->attack($charmeleon->attack[1], $pikachu); ?>
 		<br>
-		<?php echo $pikachu->health; ?>
-		<br>
-		
+		<p><?php echo $pikachu->nickname; ?> has <?php echo $pikachu->health; ?> HP</p>
+		<br>		
 		<script type="text/javascript" src="script.js"></script>
 	</body>
 </html>

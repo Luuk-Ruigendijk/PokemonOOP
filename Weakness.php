@@ -2,6 +2,8 @@
 
 class Weakness
 {
+	public $EnergyType;
+	public $multiplier;
 	
 	function __construct($EnergyType, $multiplier)
 	{

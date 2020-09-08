@@ -1,0 +1,17 @@
+Ik heb met deze opdracht veel geleerd over hoe er met OOP om moet worden gegaan.
+
+Het meest heb ik geleerd over het gebruik van Classes en de Constructor.
+
+Tijdens het werken hieraan heb ik de opdracht op veel manieren geprobeerd uit te werken.
+
+De manier die ik uiteindelijk gekozen heb was om bijna alle properties van de pokemon in een Class te zetten.
+
+Vervolgens had ik het grootste deel in de Child constructor gezet, maar na advies tijdens het nakijken heb ik ervoor gekozen om zoveel mogelijk aan de Parent constructor mee te geven.
+
+Om alle properties secure te maken had ik gebruik gemaakt van getters en setters. 
+
+Toen ik dit door een medestudent liet nakijken wees hij me erop dat het op een efficiëntere manier gedaan kon worden.
+
+In plaats van gebruik maken van een rij aan If-else statements, heb ik gebruik gemaakt van Switch.
+
+Ik vind dat mijn kennis over OOP met deze opdracht zeer gegroeid is.

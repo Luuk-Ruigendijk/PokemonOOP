@@ -1,0 +1,18 @@
+methods, constructers en naming conventions goed gebruikt.
+
+goed gebruik gemaakt van getters en setters, maar op sommige plekken zouden wat meer comments beter zijn.
+
+goed gebruik gemaakt van protected en de access modifiers.
+
+geen conflicten gezien (public/protected bij elkaar) waarbij code door elkaar overschreven wordt
+
+de child classes (pikachu en charmeleon) maken goed gebruik van de parameters van de parent (pokemon). 
+
+er is geen gebruik gemaakt van namespacing en static. Namespacing lijkt niet noodzakelijk te zijn zolang er geen 'extra' features gemaakt hoeven worden
+
+static word met de volgende feature toegevoegd
+
+
+voor zover gezien voldoet de uitwerking aan de eisen van de opdracht
+
+voor zover gezien werken de functionele eisen, behalve GetPopulation (deze word later toegevoegd)
